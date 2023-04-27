@@ -4,8 +4,7 @@
 
 NAME           VECTFONT  WINDOWAPI
 
-DESCRIPTION    'Vector Font Demo Program (C) Charles Petzold, 1988'
-PROTMODE
+DESCRIPTION     '@#OS2World:1.01#@##1## 27 Apr 2023 20:37:00     ARCAOS-507::::::v1.01@@Vector Font Demo Program'
 HEAPSIZE       1024
 STACKSIZE      8192
 EXPORTS        ClientWndProc

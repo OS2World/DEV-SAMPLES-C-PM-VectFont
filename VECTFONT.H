@@ -27,9 +27,9 @@
 
 LONG CreateVectorFont (HPS hps, LONG lcid, CHAR *szFacename) ;   // VF00
 BOOL ScaleVectorFont (HPS hps, SHORT xPointSize, SHORT yPointSize) ;
-BOOL ScaleFontToBox (HPS hps, LONG cbText, CHAR *szText, LONG cxBox,
+BOOL ScaleFontToBox (HPS hps, LONG cbText, PCH szText, LONG cxBox,
                                                          LONG cyBox) ;
-VOID QueryStartPointInTextBox (HPS hps, LONG cbText, CHAR *szText,
+VOID QueryStartPointInTextBox (HPS hps, LONG cbText, PCH szText,
                                         POINTL *pptl) ;
 VOID ColorClient (HPS hps, LONG cxClient, LONG cyClient, LONG lColor) ;
 
@@ -48,3 +48,10 @@ VOID Display_Fade (HPS hps, LONG cxClient, LONG cyClient) ;      // VF12
 VOID Display_Spokes (HPS hps, LONG cxClient, LONG cyClient) ;    // VF13
 VOID Display_Wavy (HPS hps, LONG cxClient, LONG cyClient) ;      // VF14
 VOID Display_ModSpokes (HPS hps, LONG cxClient, LONG cyClient) ; // VF15
+
+#ifndef max
+#define max(a,b) (((a) > (b)) ? (a) : (b))
+#endif
+#ifndef min
+#define min(a,b) (((a) < (b)) ? (a) : (b))
+#endif

@@ -8,7 +8,7 @@
 
 VOID Display_Fade (HPS hps, LONG cxClient, LONG cyClient)
      {
-     static CHAR szText[] = "Fade" ;
+     unsigned char szText[] = "Fade" ;
      static LONG cbText = sizeof szText - 1 ;
      LONG        lPattern ;
      POINTL      ptl ;

@@ -8,7 +8,7 @@
 
 VOID Display_Block (HPS hps, LONG cxClient, LONG cyClient)
      {
-     static CHAR szText[] = " Block " ;
+     unsigned char szText[] = " Block " ;
      static LONG cbText = sizeof szText - 1 ;
      INT         i ;
      POINTL      ptl ;

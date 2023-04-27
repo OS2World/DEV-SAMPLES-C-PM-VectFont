@@ -8,7 +8,7 @@
 
 VOID Display_Mirror (HPS hps, LONG cxClient, LONG cyClient)
      {
-     static CHAR szText[] = "Mirror" ;
+     unsigned char szText[] = "Mirror" ;
      static LONG cbText = sizeof szText - 1 ;
      INT         i ;
      POINTL      ptl ;

@@ -8,7 +8,7 @@
 
 VOID Display_Neon (HPS hps, LONG cxClient, LONG cyClient)
      {
-     static CHAR szText[] = " Neon " ;
+     unsigned char szText[] = " Neon " ;
      static LONG cbText = sizeof szText - 1 ;
      static LONG lForeColor[] = { CLR_DARKRED, CLR_DARKRED, CLR_RED,
                                   CLR_RED,     CLR_WHITE,   CLR_WHITE };

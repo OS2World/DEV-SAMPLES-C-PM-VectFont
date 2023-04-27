@@ -10,7 +10,7 @@
 
 VOID Display_Rotate (HPS hps, LONG cxClient, LONG cyClient)
      {
-     static CHAR szText[] = "Hello, world! " ;
+     unsigned char szText[] = "Hello, world! " ;
      static LONG cbText = sizeof szText - 1L ;
      static LONG alWidthTable[256] ;
      double      ang, angCharWidth, angChar ;
@@ -29,7 +29,7 @@ VOID Display_Rotate (HPS hps, LONG cxClient, LONG cyClient)
 
                          // Find circle dimensions and scale font
 
-     lRadius = min (cxClient / 4, cyClient / 4) ;
+     lRadius = fmin (cxClient / 4, cyClient / 4) ;
      lCircum = (LONG) (2 * PI * lRadius) ;
      cyChar  = fm.lMaxBaselineExt * lRadius / fm.lMaxAscender ;
 

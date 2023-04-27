@@ -8,7 +8,7 @@
 
 VOID Display_Hollow (HPS hps, LONG cxClient, LONG cyClient)
      {
-     static CHAR szText[] = "Hollow" ;
+     unsigned char szText[] = "Hollow" ;
      static LONG cbText = sizeof szText - 1 ;
      POINTL      ptl ;
 

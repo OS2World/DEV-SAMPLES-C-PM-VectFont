@@ -9,10 +9,10 @@
 
 VOID Display_CharAngle (HPS hps, LONG cxClient, LONG cyClient)
      {
-     static GRADIENTL agradl[8] = { 100,    0,  100,  100,
-                                      0,  100, -100,  100,
-                                   -100,    0, -100, -100,
-                                      0, -100,  100, -100 } ;
+     static GRADIENTL agradl[8] = { {100,    0},  {100,  100},
+                                      {0,  100}, {-100,  100},
+                                   {-100,    0}, {-100, -100},
+                                      {0, -100},  {100, -100} } ;
      CHAR             szBuffer[40] ;
      INT              iIndex ;
      POINTL           ptl ;
@@ -33,7 +33,7 @@ VOID Display_CharAngle (HPS hps, LONG cxClient, LONG cyClient)
           GpiCharStringAt (hps, &ptl,
                (LONG) sprintf (szBuffer, " Character Angle (%ld,%ld)",
                                agradl[iIndex].x, agradl[iIndex].y),
-               szBuffer) ;
+               (PCCH) szBuffer) ;
           }
      GpiSetCharSet (hps, LCID_DEFAULT) ;               // Clean up
      GpiDeleteSetId (hps, LCID_MYFONT) ;

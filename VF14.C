@@ -9,7 +9,7 @@
 
 VOID Display_Wavy (HPS hps, LONG cxClient, LONG cyClient)
      {
-     static CHAR szText[] = "Hello!" ;
+     unsigned char szText[] = "Hello!" ;
      static LONG cbText = sizeof szText - 1 ;
      static LONG lColors[] = { CLR_BLUE, CLR_GREEN,  CLR_CYAN, CLR_RED,
                                CLR_PINK, CLR_YELLOW, CLR_WHITE } ;

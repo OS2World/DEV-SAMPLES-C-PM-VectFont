@@ -8,7 +8,7 @@
 
 VOID Display_Shadow (HPS hps, LONG cxClient, LONG cyClient)
      {
-     static CHAR szText[] = "Shadow" ;
+     unsigned char szText[] = "Shadow" ;
      static LONG cbText = sizeof szText - 1 ;
      POINTL      ptl, ptlShear ;
      SIZEF       sizfx ;

@@ -61,8 +61,7 @@ BOOL ScaleVectorFont (HPS hps, SHORT xPointSize, SHORT yPointSize)
      return GpiSetCharBox (hps, &sizfx) ;
      }
 
-BOOL ScaleFontToBox (HPS hps, LONG cbText, CHAR *szText, LONG cxBox,
-                                                         LONG cyBox)
+BOOL ScaleFontToBox (HPS hps, LONG cbText, PCH szText, LONG cxBox, LONG cyBox)
      {
      POINTL aptl[TXTBOX_COUNT] ;
      SIZEF  sizfx ;
@@ -83,8 +82,7 @@ BOOL ScaleFontToBox (HPS hps, LONG cbText, CHAR *szText, LONG cxBox,
      return GpiSetCharBox (hps, &sizfx) ;
      }
 
-VOID QueryStartPointInTextBox (HPS hps, LONG cbText, CHAR *szText,
-                                        POINTL *pptl)
+VOID QueryStartPointInTextBox (HPS hps, LONG cbText, PCH szText, POINTL *pptl)
      {
      POINTL aptl[TXTBOX_COUNT] ;
 

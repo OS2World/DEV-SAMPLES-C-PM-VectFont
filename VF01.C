@@ -41,9 +41,9 @@ VOID Display_24Point (HPS hps, LONG cxClient, LONG cyClient)
                                    // Display the font facename
 
           GpiCharStringAt (hps, &ptl, (LONG) strlen (szFacename[iFont]),
-                           szFacename[iFont]) ;
+                           (PCCH) szFacename[iFont]) ;
 
-          GpiCharString (hps, 10L, " - abcdefg") ;
+          GpiCharString (hps, 10L, (PCCH) " - abcdefg") ;
 
           GpiSetCharSet (hps, LCID_DEFAULT) ;     // Clean up
           GpiDeleteSetId (hps, LCID_MYFONT) ;
