@@ -19,7 +19,7 @@ This version of this sample was modified to compile on ArcaOS with GCC 9 compile
 
 1) Remember to have correct header files your path. For GCC the correct ones are the included on the "libc-devel", not the ones from the OS/2 Toolkit. Check your config.sys for "SET INCLUDE=C:\usr\include"
 
-2) Since I'm using the Watcom Resource Compiler (open source) instead of the classic rc.exe, add to your config.sys...
+2) Since I'm using the Watcom Linker (open source) instead of the classic ilink.exe, add to your config.sys...
  SET EMXOMFLD_LINKER=wl.exe
  SET EMXOMFLD_TYPE=WLINK
 
