@@ -6,9 +6,11 @@ From Exploring Vector Fonts with the OS/2 Graphics Programming Interface - Mar 1
 * BSD 3 Clauses
 
 ## COMPILE TOOLS
-* 
+* - yum install git gcc make libc-devel binutils watcom-wrc watcom-wlink-hll
  
 ## AUTHORS
+* Dave Yeo
+* Martin Iturbide
 * Charled Petzold
 
 ## LINKS
