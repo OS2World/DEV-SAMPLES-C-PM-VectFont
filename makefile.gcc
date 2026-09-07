@@ -1,0 +1,29 @@
+SRC = src
+BIN = bin-gcc
+
+OBJS = $(BIN)/vectfont.obj \
+       $(BIN)/vf00.obj $(BIN)/vf01.obj $(BIN)/vf02.obj $(BIN)/vf03.obj \
+       $(BIN)/vf04.obj $(BIN)/vf05.obj $(BIN)/vf06.obj $(BIN)/vf07.obj \
+       $(BIN)/vf08.obj $(BIN)/vf09.obj $(BIN)/vf10.obj $(BIN)/vf11.obj \
+       $(BIN)/vf12.obj $(BIN)/vf13.obj $(BIN)/vf14.obj $(BIN)/vf15.obj
+
+all : $(BIN)/vectfont.exe
+
+$(BIN)/vectfont.exe : $(OBJS) $(BIN)/vectfont.res
+	gcc -Zomf $(OBJS) $(SRC)/vectfont.def -o $(BIN)/vectfont.exe
+	wrc -q $(BIN)/vectfont.res $(BIN)/vectfont.exe
+
+$(BIN)/vectfont.res : $(SRC)/vectfont.rc $(SRC)/vectfont.h | $(BIN)
+	wrc -r $(SRC)/vectfont.rc -fo=$(BIN)/vectfont.res
+
+$(BIN)/vectfont.obj : $(SRC)/vectfont.c $(SRC)/vectfont.h | $(BIN)
+	gcc -Wall -Zomf -c -O2 -I$(SRC) $(SRC)/vectfont.c -o $@
+
+$(BIN)/vf%.obj : $(SRC)/vf%.c $(SRC)/vectfont.h | $(BIN)
+	gcc -Wall -Zomf -c -O2 -I$(SRC) $< -o $@
+
+$(BIN) :
+	if not exist $(BIN) md $(BIN)
+
+clean :
+	rm -f $(BIN)/*.obj $(BIN)/*.res $(BIN)/*.exe $(BIN)/*.map

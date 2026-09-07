@@ -40,7 +40,7 @@ VOID Display_CharShear (HPS hps, LONG cxClient, LONG cyClient)
           GpiCharStringAt (hps, &ptl,
                (LONG) sprintf (szBuffer, "Character Shear (%ld,%ld)",
                          aptlShear[iIndex].x, aptlShear[iIndex].y),
-              (PCCH) szBuffer) ;
+              (PCH) szBuffer) ;
           }
      GpiSetCharSet (hps, LCID_DEFAULT) ;               // Clean up
      GpiDeleteSetId (hps, LCID_MYFONT) ;

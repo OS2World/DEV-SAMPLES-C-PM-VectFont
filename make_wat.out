@@ -1,0 +1,30 @@
+Open Watcom Make Version 2.0.1
+Portions Copyright (c) 1988-2002 Sybase, Inc. All Rights Reserved.
+Source code is available under the Sybase Open Watcom Public License.
+See http://www.openwatcom.org/ for details.
+	if not exist bin-wat md bin-wat
+	wcc386 -bt=os2 -q -Ot -wx -Isrc src\vectfont.c -fo=bin-wat\vectfont.obj
+	wcc386 -bt=os2 -q -Ot -wx -Isrc src\vf00.c -fo=bin-wat\vf00.obj
+	wcc386 -bt=os2 -q -Ot -wx -Isrc src\vf01.c -fo=bin-wat\vf01.obj
+	wcc386 -bt=os2 -q -Ot -wx -Isrc src\vf02.c -fo=bin-wat\vf02.obj
+	wcc386 -bt=os2 -q -Ot -wx -Isrc src\vf03.c -fo=bin-wat\vf03.obj
+	wcc386 -bt=os2 -q -Ot -wx -Isrc src\vf04.c -fo=bin-wat\vf04.obj
+	wcc386 -bt=os2 -q -Ot -wx -Isrc src\vf05.c -fo=bin-wat\vf05.obj
+	wcc386 -bt=os2 -q -Ot -wx -Isrc src\vf06.c -fo=bin-wat\vf06.obj
+	wcc386 -bt=os2 -q -Ot -wx -Isrc src\vf07.c -fo=bin-wat\vf07.obj
+	wcc386 -bt=os2 -q -Ot -wx -Isrc src\vf08.c -fo=bin-wat\vf08.obj
+	wcc386 -bt=os2 -q -Ot -wx -Isrc src\vf09.c -fo=bin-wat\vf09.obj
+	wcc386 -bt=os2 -q -Ot -wx -Isrc src\vf10.c -fo=bin-wat\vf10.obj
+	wcc386 -bt=os2 -q -Ot -wx -Isrc src\vf11.c -fo=bin-wat\vf11.obj
+	wcc386 -bt=os2 -q -Ot -wx -Isrc src\vf12.c -fo=bin-wat\vf12.obj
+	wcc386 -bt=os2 -q -Ot -wx -Isrc src\vf13.c -fo=bin-wat\vf13.obj
+	wcc386 -bt=os2 -q -Ot -wx -Isrc src\vf14.c -fo=bin-wat\vf14.obj
+	wcc386 -bt=os2 -q -Ot -wx -Isrc src\vf15.c -fo=bin-wat\vf15.obj
+	if not exist bin-wat md bin-wat
+	wrc -r src\vectfont.rc -fo=bin-wat\vectfont.res
+Open Watcom Windows and OS/2 Resource Compiler Version 2.0.1
+Portions Copyright (c) 1993-2002 Sybase, Inc. All Rights Reserved.
+Source code is available under the Sybase Open Watcom Public License.
+See http://www.openwatcom.org/ for details.
+	wlink system os2v2_pm name bin-wat\vectfont.exe op q op maxe=25 	    file { bin-wat\vectfont.obj bin-wat\vf00.obj bin-wat\vf01.obj bin-wat\vf02.obj bin-wat\vf03.obj bin-wat\vf04.obj bin-wat\vf05.obj bin-wat\vf06.obj bin-wat\vf07.obj bin-wat\vf08.obj bin-wat\vf09.obj bin-wat\vf10.obj bin-wat\vf11.obj bin-wat\vf12.obj bin-wat\vf13.obj bin-wat\vf14.obj bin-wat\vf15.obj } @src\vectfont.lnk
+	wrc -q bin-wat\vectfont.res bin-wat\vectfont.exe

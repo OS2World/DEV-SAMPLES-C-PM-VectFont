@@ -29,7 +29,7 @@ VOID Display_Rotate (HPS hps, LONG cxClient, LONG cyClient)
 
                          // Find circle dimensions and scale font
 
-     lRadius = fmin (cxClient / 4, cyClient / 4) ;
+     lRadius = min (cxClient / 4, cyClient / 4) ;
      lCircum = (LONG) (2 * PI * lRadius) ;
      cyChar  = fm.lMaxBaselineExt * lRadius / fm.lMaxAscender ;
 

@@ -1,0 +1,4 @@
+option description '@#OS2World:1.02#@##1## 06 Sep 2026 00:00:00     ARCAOS-507::::::v1.02@@Vector Font Demo Program'
+option stack=8192
+option heap=1024
+export { ClientWndProc }

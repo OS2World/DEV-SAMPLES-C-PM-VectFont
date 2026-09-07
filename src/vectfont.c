@@ -29,7 +29,7 @@ int main (void)
 
      hwndFrame = WinCreateStdWindow (HWND_DESKTOP, WS_VISIBLE,
                                      &flFrameFlags, szClientClass,
-                                     (PCSZ) " - Vector Font Demo", 0L,
+                                     (PSZ) " - Vector Font Demo", 0L,
                                      0, ID_RESOURCE, &hwndClient) ;
 
      WinSendMsg (hwndFrame, WM_SETICON,

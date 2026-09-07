@@ -1,0 +1,3 @@
+gcc -Wall -Zomf -c -O2 -Isrc src/vf00.c -o bin-gcc/vf00.obj
+gcc -Zomf bin-gcc/vectfont.obj bin-gcc/vf00.obj bin-gcc/vf01.obj bin-gcc/vf02.obj bin-gcc/vf03.obj bin-gcc/vf04.obj bin-gcc/vf05.obj bin-gcc/vf06.obj bin-gcc/vf07.obj bin-gcc/vf08.obj bin-gcc/vf09.obj bin-gcc/vf10.obj bin-gcc/vf11.obj bin-gcc/vf12.obj bin-gcc/vf13.obj bin-gcc/vf14.obj bin-gcc/vf15.obj src/vectfont.def -o bin-gcc/vectfont.exe
+wrc -q bin-gcc/vectfont.res bin-gcc/vectfont.exe

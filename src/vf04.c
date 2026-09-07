@@ -33,7 +33,7 @@ VOID Display_CharAngle (HPS hps, LONG cxClient, LONG cyClient)
           GpiCharStringAt (hps, &ptl,
                (LONG) sprintf (szBuffer, " Character Angle (%ld,%ld)",
                                agradl[iIndex].x, agradl[iIndex].y),
-               (PCCH) szBuffer) ;
+               (PCH) szBuffer) ;
           }
      GpiSetCharSet (hps, LCID_DEFAULT) ;               // Clean up
      GpiDeleteSetId (hps, LCID_MYFONT) ;

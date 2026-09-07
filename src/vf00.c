@@ -2,14 +2,12 @@
    VF00.C -- Routines for working with vector fonts
   --------------------------------------------------*/
 
-#define INCL_WIN
 #define INCL_GPI
 #include <os2.h>
 #include <stdlib.h>
 #include <string.h>
 #include "vectfont.h"
 
-extern HAB hab ;
 
 LONG CreateVectorFont (HPS hps, LONG lcid, CHAR *szFacename)
      {
@@ -94,8 +92,16 @@ VOID QueryStartPointInTextBox (HPS hps, LONG cbText, PCH szText, POINTL *pptl)
 
 VOID ColorClient (HPS hps, LONG cxClient, LONG cyClient, LONG lColor)
      {
-     RECTL rcl ;
+     POINTL ptl ;
 
-     WinSetRect (hab, &rcl, 0, 0, (SHORT) cxClient, (SHORT) cyClient) ;
-     WinFillRect (hps, &rcl, lColor) ;
+     GpiSetColor   (hps, lColor) ;
+     GpiSetPattern (hps, PATSYM_SOLID) ;
+
+     ptl.x = 0 ;
+     ptl.y = 0 ;
+     GpiMove (hps, &ptl) ;
+
+     ptl.x = cxClient ;
+     ptl.y = cyClient ;
+     GpiBox (hps, DRO_FILL, &ptl, 0L, 0L) ;
      }

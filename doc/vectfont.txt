@@ -1,0 +1,87 @@
+Name: 		VectFont
+Descripcion: 	Vector Font Demo Program
+Date: 		2026-09-06
+Version:	1.02
+----------------------------
+
+DESCRIPTION
+-----------
+This is a PM sample application that will show you a list and generate text in
+different fonts, styles and shapes using the OS/2 GPI vector font API.
+Originally published by Charles Petzold in "Exploring Vector Fonts with the
+OS/2 Graphics Programming Interface", OS/2 Developer Magazine, Mar 1989
+(Vol.4 No.2), S12219.ZIP.
+
+
+REQUIREMENTS
+------------
+- yum install git gcc make libc-devel binutils watcom-wrc watcom-wlink-hll watcom-wcc
+
+
+COMPILE INSTRUCTIONS
+--------------------
+The source code is in the src/ directory. Two toolchains are supported.
+
+GCC / kLIBC:
+1) Ensure the EMXOMFLD variables are set (compile_gcc.cmd handles this):
+     SET EMXOMFLD_LINKER=wl.exe
+     SET EMXOMFLD_TYPE=WLINK
+     SET EMXOMFLD_PRELINK=0
+2) Run compile_gcc.cmd
+   Output: bin-gcc\vectfont.exe
+   Log:    make_gcc.out
+
+OpenWatcom:
+1) Ensure the Watcom headers and libraries are in INCLUDE and LIB
+   (compile_wat.cmd sets these from C:\watcom).
+2) Run compile_wat.cmd
+   Output: bin-wat\vectfont.exe
+   Log:    make_wat.out
+
+
+TOOLS USED
+----------
+- ArcaOS        - Version 5.0.7
+- wrc           - Open Watcom 2.0.1
+- wlink         - Open Watcom 2.0.1
+- gcc           - GCC 9.2.0 (OS/2 RPM build 9.2.0-5.oc00)
+- make          - Version 3.81 k2 (2017-11-10)
+- wmake         - Open Watcom 2.0.1
+
+
+TROUBLESHOOT
+------------
+If the build fails, check the log file (make_gcc.out or make_wat.out) for
+details. The compile_*.cmd scripts run a clean step before building to ensure
+stale object files do not hide errors.
+
+
+HISTORY
+----------
+- 1.02 - 2026-09-06
+  Sources moved to src/ directory with lowercase filenames.
+  Dual GCC and OpenWatcom build support added (makefile.gcc, makefile.wat,
+  compile_gcc.cmd, compile_wat.cmd).
+  Fixed background fill in shadow/neon/spokes/wavy display modes: ColorClient
+  was passing page-unit coordinates to WinFillRect (which uses device pixels),
+  replaced with GpiBox so the fill uses the correct PS page coordinate system.
+  Fixed PCCH cast to PCH for OS/2 Toolkit 4.5 / Watcom header compatibility.
+  Replaced fmin() (C99) with min() macro for Watcom compatibility.
+
+- 1.01 - 2023-04-27
+  Changed version to compile on gcc and to run on ArcaOS 5.0.7.
+
+- 1.0
+  Original version by Charles Petzold.
+
+
+LICENSE
+-------
+The 3-Clause BSD License.
+
+
+AUTHORS
+-------
+- Charles Petzold (original)
+- Dave Yeo (2023)
+- Martin Iturbide (2023, 2026)
